@@ -452,9 +452,9 @@
 				\vspace*{0.5cm}
 				%
 				% authors
-				\begin{LARGE}
+				\begin{Large}
 					\@author\\
-				\end{LARGE}
+				\end{Large}
 				\ifdef{\@team} {
 					\medskip
 					\Large\textsl{\@team}\\
