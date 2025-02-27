@@ -1,4 +1,4 @@
-# Lab: Name
+# Trabajo Final: BuroSmart
 By Luis Daniel Casais Mezquida, Martin Shao He & Pablo Fernández de la Puente Jaureguízar   
 Calidad de Software 24/25  
 Máster en Ingeniería Informática  
