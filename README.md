@@ -31,10 +31,30 @@ First you must install [LaTeX](https://www.latex-project.org/).
 > As we'll use SVG files, you'll need to install [Inkscape](https://inkscape.org/).
 > If you're in Windows, make sure to add the executable to your PATH (typically located in `C:\Program Files\Inkscape\bin\`).
 
+Compilation is done through [latexmk](https://ctan.org/pkg/latexmk), using [LuaLaTeX](https://www.luatex.org/).
+
+A configuration file ([`.latexmkrc`](.latexmkrc)) is provided to aid in compilation.
 To compile the report, use the command:
 ```
-latexmk -cd -shell-escape -pdf -outdir=build report.tex
+latexmk report.tex
 ```
+
+<details>
+  <summary>
+    Compiling <i>without</i> latexmk.
+  </summary>
+
+  - Compile with LuaLaTeX
+  - Set `--shell-escape`
+  - Set the `PLANTUML_JAR` enviroment variable to `plantuml-1.2025.1.jar`
+
+</details>
+
+<br/>
+
+> [!IMPORTANT]
+> Do **not** set the `--output-directory`/`-outdir` parameter, it breaks PlantUML.
+
 
 ## VS Code
 Some useful extensions:
@@ -42,9 +62,9 @@ Some useful extensions:
 > [!IMPORTANT]
 > If you are using the extension, please set `-shell-escape` (see [LaTeX Workshop FAQ](https://github.com/James-Yu/LaTeX-Workshop/wiki/FAQ#how-to-pass--shell-escape-to-latexmk))
 
-> [!TIP]
+<!-- > [!TIP]
 > You can change the output directory in the `latex-workshop.latex.outDir`, setting it for example to `%DIR%/build` (see [LaTeX Workshop Wiki](https://github.com/James-Yu/LaTeX-Workshop/wiki/View#latex-workshoplatexoutdir)).  
-> If issues arise, ensure all folders and subfolders exist (e.g. `build/parts/`).
+> If issues arise, ensure all folders and subfolders exist (e.g. `build/parts/`). -->
 
 > [!TIP]
 > You can enable the wordcount by setting `latex-workshop.wordcount` to `onSave` in the settings. More information [here](https://github.com/James-Yu/LaTeX-Workshop/wiki/ExtraFeatures#counting-words)

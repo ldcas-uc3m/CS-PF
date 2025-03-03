@@ -34,7 +34,12 @@
 *.snm
 *.bkp
 
+build/
 svg-inkscape/
 _markdown_report/
 
 report.pdf
+
+# plantuml
+*-plantuml.*
+*.pytxcode
