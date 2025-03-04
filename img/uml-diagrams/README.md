@@ -9,10 +9,12 @@
 
 
 ## Compilation
-We'll export the files to the parent folder in SVG format.
+We'll export the source files inside `src` to the current directory, in SVG format:
 ```
-java -jar </path/to/plantuml.jar> -o .. -tsvg <diagram>.puml
+java -jar </path/to/plantuml.jar> -o .. -tsvg src/<diagram>.puml
 ```
+
+To simplify the process, a bash script ([`compile.sh`](compile.sh)) is provided.
 
 
 ## VS Code

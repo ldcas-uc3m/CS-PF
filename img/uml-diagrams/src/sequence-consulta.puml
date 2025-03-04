@@ -1,0 +1,26 @@
+@startuml
+
+actor Ciudadano
+participant Agente
+database BBDD
+boundary "API externa" as API
+
+Ciudadano -> Agente: Consulta
+
+activate Agente
+Agente -> BBDD: Consulta de datos
+BBDD --> Agente
+Agente -> Agente: Procesado
+Agente --> Ciudadano: Respuesta
+deactivate Agente
+
+Agente -> Ciudadano: Propuesta de acciones
+Ciudadano -> Agente: Selección de acción
+
+activate Agente
+Agente -> API: Acción
+API --> Agente: Respuesta
+Agente --> Ciudadano: Respuesta
+deactivate Agente
+
+@enduml

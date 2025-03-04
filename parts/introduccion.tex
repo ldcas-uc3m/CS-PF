@@ -150,6 +150,9 @@ Se identifican varios escenarios que ejemplifican cómo interactuarán los usuar
 
 \subsubsection{Diagramas UML}
 Para complementar la documentación técnica y facilitar la comprensión del sistema, se recomienda la elaboración de los siguientes diagramas UML:
+
+% TODO: reescribir esta mierda, es basura de ChatGPT
+
 \begin{itemize}
     \item \textbf{Diagrama de Estados:} \\
     \textbf{Propósito:} Representar los distintos estados por los que puede transitar un trámite (por ejemplo, ``Iniciado'', ``En Proceso'', ``Completado'', ``Rechazado'') y los eventos que provocan el cambio de estado. \\
@@ -157,6 +160,10 @@ Para complementar la documentación técnica y facilitar la comprensión del sis
     \item \textbf{Diagrama de Secuencia:} \\
     \textbf{Propósito:} Ilustrar la interacción dinámica entre los actores (ciudadano, funcionario, agente LLM) y los componentes del sistema durante un proceso típico, como la consulta o actualización de un trámite. \\
     Comentario: Se necesita un diagrama de secuencia que detalle el flujo de mensajes y acciones desde el inicio de la solicitud del usuario hasta la respuesta final del sistema.
+
+    % \figref{uml-diagrams/sequence-consulta}
+    \svgfigure{uml-diagrams/sequence-consulta}{Diagrama de secuencia de una Solicitud de Asesoramiento Personalizado}
+
     \item \textbf{Diagrama de Actividad:} \\
     \textbf{Propósito:} Visualizar el flujo de trabajo completo de un proceso administrativo, desde la recepción de la solicitud hasta su resolución final, identificando decisiones y actividades clave en el proceso. \\
     Comentario: Se requiere un diagrama de actividad que muestre las actividades secuenciales y paralelas, junto con las bifurcaciones y convergencias del proceso administrativo.
