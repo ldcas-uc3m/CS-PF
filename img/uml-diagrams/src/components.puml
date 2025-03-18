@@ -1,0 +1,31 @@
+@startuml
+
+component Front
+component Backend {
+    component "Agent Tools" as Tools
+    component "Message Router" as MR
+    component "Agent" as Agent
+    component "LLM API" as LLM
+    component "DB connector (User)" as UserDB
+    component "DB connector (Business)" as BusinessDB
+
+    ' Agent process
+    [Agent] -r-( "Business data"
+    [BusinessDB] -l- "Business data"
+    [Agent] -d-( "Get available tools"
+    [Tools] -u- "Get available tools"
+    [Agent] -u- "Context"
+    [LLM] -d-( "Context"
+
+
+    [Front] -l-( "Responses"
+    [MR] -r- "Responses"
+    [MR] -d-( "User Info"
+
+    [MR] -u-( "Consult"
+    [Agent] -d- "Consult"
+
+    [UserDB] -u- "User Info"
+}
+
+@enduml

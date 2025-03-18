@@ -1,0 +1,8 @@
+@startuml
+
+node FrontEnd {
+    component Front
+}
+
+
+@enduml

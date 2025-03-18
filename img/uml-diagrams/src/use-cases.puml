@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+
+' entidades
+"Administrador" as Admin
+"Ciudadano" as User
+"Soporte Técnico" as Tech
+
+' casos de uso
+"Consulta de Estado de Trámite" as (Consult)
+"Solicitud de Asesoramiento Personalizado" as (Solicit)
+"Actualización y Validación de Datos Administrativos" as (Update)
+"Gestión de Incidencias y Retroalimentación" as (Incident)
+
+' relaciones
+:User: --> Consult
+:User: --> Solicit
+:Admin: --> Update
+:User: --> Incident
+:Tech: --> Incident
+
+@enduml
