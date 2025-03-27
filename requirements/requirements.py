@@ -34,21 +34,34 @@ parser.add_argument(
 
 
 # requires LaTeX packages `calc`, `booktabs`, and `placeins`
-TABLE_TEMPLATE = Template(r"""\begin{table}[htbp]
+REQUIREMENT_MACRO = r"""
+\newcommand{\requirement}[3]{%
+\begin{table}[htbp]
   \centering
   \noindent
   \begin{tabular}{@{}p{83pt}@{}p{.85\columnwidth-83pt}@{}}
     \toprule
-    \multicolumn{2}{@{}l}{\bfseries{$id}} \\
+    \multicolumn{2}{@{}l}{\bfseries{#1}} \\
     \hline
-    \textbf{Description}   & {$description} \\
-    \textbf{Quality Level} & {$level} \\
+    \textbf{Description}   & {#2} \\
+    \textbf{Quality Level} & {#3} \\
     \bottomrule
   \end{tabular}
-  \label{req:$id}
-  \caption{Requirement $id}
+  \label{req:#1}
+  \caption{Requirement #1}
 \end{table}
+}
 
+
+"""
+
+
+TABLE_TEMPLATE = Template(r"""
+\requirement{$id}
+  {
+    $description
+  }
+  {$level}
 """)
 
 
@@ -91,6 +104,9 @@ def generate_type_requirements(
 if __name__ == "__main__":
     # parse arguments
     args = parser.parse_args()
+
+    # add macro
+    args.output.write(REQUIREMENT_MACRO)
 
     # generate stakeholder reqs
     generate_type_requirements(
