@@ -4,5 +4,27 @@ node FrontEnd {
     component Front
 }
 
+node BackEnd {
+    component dbcu [
+        DB Connector (User)
+    ]
+    component dbcb [
+        DB Connector (Business)
+    ]
+    component "LLM API"
+    component Agent
+    component "Message Router"
+    component "Agent Tools"
+}
+
+database BusinessDB
+
+database UserDB
+
+
+FrontEnd <==> BackEnd
+dbcu <--> UserDB
+dbcb <--> BusinessDB
+
 
 @enduml
