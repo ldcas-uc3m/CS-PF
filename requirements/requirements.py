@@ -47,8 +47,8 @@ REQUIREMENT_MACRO = r"""
     \textbf{Quality Level} & {#3} \\
     \bottomrule
   \end{tabular}
-  \label{req:#1}
   \caption{Requirement #1}
+  \label{req:#1}
 \end{table}
 }
 
