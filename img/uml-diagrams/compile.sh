@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+# set -e
 
 if [ ! -f plantuml.jar ]; then
     # download plantuml
@@ -8,5 +8,5 @@ if [ ! -f plantuml.jar ]; then
 fi
 
 for diagram in src/*.puml; do
-    java -jar plantuml.jar -o .. -tsvg "src/$filename"
+    java -jar plantuml.jar -o .. -tsvg $diagram || echo "Error generating $diagram"
 done

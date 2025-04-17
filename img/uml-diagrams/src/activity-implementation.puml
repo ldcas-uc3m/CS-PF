@@ -1,0 +1,11 @@
+@startuml
+start
+partition "**process** Proceso de implementación" {
+  :Prepare for implementation;
+  :Perform implementation;
+  :Manage results of implementation;
+
+}
+stop
+
+@enduml

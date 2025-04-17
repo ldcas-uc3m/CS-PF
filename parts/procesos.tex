@@ -1,1 +1,119 @@
 \section{Procesos}
+Vamos a definir un par de los procesos necesarios para la realización del proyecto, con el fin de ilustrar algunos de los más relevantes.
+
+Para cada uno de ellos, se hará una breve descripción del mismo y se detallarán las distintas actividades, entradas, y salidas.
+
+
+\subsection{Proceso de implementación}  % ISO 15288, 6.4.7
+El proceso de implementación es aquel por el que se desarrolla el sistema descrito, con el fin de satisfacer los requisitos. Es uno de los procesos clave de un proyecto de software.
+
+El diagrama de actividad del proceso queda reflejado en la \figref{uml-diagrams/activity-implementation}.
+
+\svgfigure[.35]{uml-diagrams/activity-implementation}{Diagrama de actividad del proceso de implementación}
+
+
+\subsubsection{Entradas}
+\begin{itemize}
+  \item \textbf{\textit{Life cycle concepts:}} Los conceptos relativos al ciclo de vida de la aplicación, derivados de las necesidades del negocio. Incluyen el concepto de despliegue, operación, soporte, y retirada.
+  \item \textbf{\textit{System architecture description:}} Descripción de la arquitectura del sistema a implementar. Incluye documentos como diagrama de componentes, de despliegue, y requisitos de sistema.
+  \item \textbf{\textit{System architecture rationale:}} Documento que recoge las distintas decisiones que se tomaron durante el proceso de diseño con respecto a la arquitectura del sistema, interfaces, o requisitos.
+  \item \textbf{\textit{Design traceability:}} Trazabilidad entre los distintos elementos del diseño: desde los requisitos a los componentes.
+\end{itemize}
+
+
+\subsubsection{Actividades}
+\begin{itemize}
+  \item \textbf{\textit{Prepare for implementation:}} Se verifica la documentación proporcionada en la entrada del proceso. Se analizan las restricciones generadas por la etapa de implementación (\textit{implementation constraints}), y se valida que los recursos disponibles son suficientes para realizar la misma en el plazo especificado. Se diseña la \textit{implementation strategy} y se documenta todo el proceso para el \textit{implementation record}. Se especifican las guías que se han de seguir durante el desarrollo, como guías de estilo, codificación y pruebas.
+  \item \textbf{\textit{Perform implementation:}} Se realiza la implementación del sistema, incluyendo el proceso de pruebas y \textit{peer reviews}. Se crean los distintos materiales de entrenamiento para el uso y mantenimiento del sistema (\textit{maintainer training materials})
+  \item \textbf{\textit{Manage results of implementation:}} Se identifican los elementos del sistema (\textit{system elements}) y se documentan los resultados del proceso (\textit{implementation report}). Por último, se elabora el \textit{implementation enabling system requirements}.
+\end{itemize}
+
+La matriz RACI del proceso queda reflejada en la \tabref{raci-implementation}.
+
+% Responsable: realiza la tarea, pueden ser varios
+% Accountable: al que despiden si sale mal, tiene que haber exactamente uno por actividad
+% Consulted: asesoran
+% Informed: necesitan recibir información sobre el progreso del projecto
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{l|c|c|c|c}
+    \textbf{Actividades}                      & \rotatebox{90}{Rol I} & \rotatebox{90}{Rol II} & \rotatebox{90}{Rol III} & \rotatebox{90}{Rol IV} \\
+    \midrule
+    \textit{Prepare for implementation}       &       &        &         &        \\ \hline
+    \textit{Perform implementation}           &       &        &         &        \\ \hline
+    \textit{Manage results of implementation} &       &        &         &        \\
+  \end{tabular}
+  \caption{Matriz RACI del Proceso de Implementación}
+  \label{tab:raci-implementation}
+\end{table}
+
+
+\subsubsection{Salidas}
+\begin{itemize}
+  \item \textbf{\textit{Implementation strategy:}} El enfoque, recursos, y planificación seguida en la implementación.
+  \item \textbf{\textit{Implementation enabling system requirements:}} Listado de los requisitos implementados y no implementados.
+  \item \textbf{\textit{Implementation constraints:}} Restricciones generadas por la estrategia de implementación, ya sean técnicas o de recursos.
+  \item \textbf{\textit{System elements:}} Listado de elementos implementados en el sistema.
+  \item \textbf{\textit{Maintainer training materials:}} Documentación y manuales para el uso y el mantenimiento del sistema.
+  \item \textbf{\textit{Implementation report:}} Informe del proceso de implementación, incluyendo los resultados de cada una de las actividades.
+  \item \textbf{\textit{Implementation record:}} Registro del proceso de implementación, el cual incluye las decisiones tomadas durante la implementación y los problemas y soluciones implementadas.
+\end{itemize}
+
+
+
+\subsection{Gestión Configuración y Activos Servicio}  % ITIL, ISO 15288 5.5
+El proceso de gestión de configuración es aquel encargado de gestionar los cambios realizados en la configuración del proyecto durante el ciclo de vida del mismo. Este es otro proceso clave dentro del proyecto, dado que asegura la trazabilidad de los distintos cambios y la comunicación y validación correcta de los mismos, algo especialmente importante en proyectos a gran escala con una gran cantidad de personas a cargo.
+
+El diagrama de actividad del proceso queda reflejado en la \figref{uml-diagrams/activity-configuration}.
+
+\svgfigure[.4]{uml-diagrams/activity-configuration}{Diagrama de actividad del proceso de implementación}
+
+
+\subsubsection{Entradas}
+\begin{itemize}
+  \item \textbf{\textit{Candidate configuration items:}} Los elementos del sistema sujetos a ser elementos de configuración (CIs).
+  \item \textbf{\textit{Project change requests:}} Listado de peticiones de cambio. Deben incluír el identificador del CI que se desea modificar o eliminar, o la descripción del nuevo CI que se quiera crear, así como especificar la \textit{baseline} a la que se refieren, los motivos de la petición, la fuente de la misma, y la persona que la ha realizado.
+\end{itemize}
+
+\subsubsection{Actividades}
+\begin{itemize}
+  \item \textbf{\textit{Plan configuration management:}} Se encarga de crear la \textit{configuration management strategy}. Se implementa un ciclo de control para la evaluación, aprobación, validación, y verificación de las peticiones de cambio.
+  \item \textbf{\textit{Plan configuration identification:}} Se identifican los elementos de configuración del sistema (CIs), se les asigna un identificador único, y se establecen las \textit{configuration baselines}.
+  \item \textbf{\textit{Plan configuration change management:}} Se encarga de controlar los cambios realizados al \textit{baseline} durante el ciclo de vida del sistema, y de procesar, verificar, validar, aprobar y realizar el seguimiento de las peticiones de cambio. También se encarga de actualizar el \textit{configuration management record}.
+  \item \textbf{\textit{Plan configuration status accounting:}} Se desarrolla un flujo para el control de la documentación y la comunicación del estado de los CIs a los responsables y al equipo de trabajo. También se encarga de generar los \textit{configuration management reports}.
+  \item \textbf{\textit{Plan configuration evaluation:}} Se realizan auditorías periódicas de la configuración para así poder validarlas contra las \textit{baselines} establecidas.
+  \item \textbf{\textit{Perform release control:}} Se encarga de la gestión de los cambios: establece prioridades, seguimientos, tiempos, y se encarga de cerrar los cambios e incluir la documentación requerida.
+\end{itemize}
+
+
+La matriz RACI del proceso queda reflejada en la \tabref{raci-implementation}.
+
+% Responsable: realiza la tarea, pueden ser varios
+% Accountable: al que despiden si sale mal, tiene que haber exactamente uno por actividad
+% Consulted: asesoran
+% Informed: necesitan recibir información sobre el progreso del projecto
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{l|c|c|c|c}
+    \textbf{Actividades}                      & \rotatebox{90}{Rol I} & \rotatebox{90}{Rol II} & \rotatebox{90}{Rol III} & \rotatebox{90}{Rol IV} \\
+    \midrule
+    \textit{Plan configuration management}       &       &        &         &        \\ \hline
+    \textit{Plan configuration identification}           &       &        &         &        \\ \hline
+    \textit{Plan configuration change management} &       &        &         &        \\ \hline
+    \textit{Plan configuration status accounting} &       &        &         &        \\ \hline
+    \textit{Plan configuration evaluation} &       &        &         &        \\ \hline
+    \textit{Perform release control} &       &        &         &        \\
+  \end{tabular}
+  \caption{Matriz RACI del Proceso de Configuracion}
+  \label{tab:raci-configuracion}
+\end{table}
+
+
+\subsubsection{Salidas}
+\begin{itemize}
+  \item \textbf{\textit{Configuration management strategy:}} La estrategia a seguir para realizar la gestión de la configuración del proyecto. Describe cómo pedir, realizar, autorizar, y documentar los cambios y establece las \textit{baselines}.
+  \item \textbf{\textit{Configuration baselines:}} Una captura inmutable del estado de la configuración en un putnto determinado, incluyendo todas los CIs.
+  \item \textbf{\textit{Configuration management report:}} Documentación sobre el estado y resultados de las actividades de gestión de la configuración. Ésta documentación tiene como objetivo informar y notificar a las partes interesadas de los cambios realizados.
+  \item \textbf{\textit{Configuration management record:}} Registro de todas las acciones realizadas en las actividades de gestión de la configuración. Incluye fechas, responsables, y descripciones detalladas de las decisiones y cambios tomados.
+\end{itemize}
+

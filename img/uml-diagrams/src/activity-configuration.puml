@@ -1,0 +1,13 @@
+@startuml
+start
+partition "**process** Gestión Configuración y Activos Servicio" {
+  :Plan configuration management;
+  :Plan configuration identification;
+  :Plan configuration change management;
+  :Plan configuration status accounting;
+  :Plan configuration evaluation;
+  :Perform release control;
+}
+stop
+
+@enduml
