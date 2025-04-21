@@ -11,17 +11,19 @@ Usage: python requirements.py <INPUT-FILE> -o <OUTPUT-FILE>
 
 import argparse
 from string import Template
+from math import floor
 
 import pandas as pd  # `xlrd` is also required
 
 
 # parser config
 parser = argparse.ArgumentParser(
-    description="Transforms Requirements from SES Engineering Studio into LaTeX code.",
+    description="Transforms Requirements from SES Engineering Studio into LaTeX markup. Please make sure to import the `calc`, `booktabs`, and `placeins` LaTeX packages",
+    formatter_class=argparse.ArgumentDefaultsHelpFormatter,
 )
 parser.add_argument(
     "input",
-    help="Input XLS file",
+    help="input XLS file",
     # "input", type=argparse.FileType("r"), help="Input XLS file"  # for some reason pandas shits itself if I use this
 )
 parser.add_argument(
@@ -29,12 +31,24 @@ parser.add_argument(
     "--output",
     type=argparse.FileType("a"),
     default="-",
-    help="Output file (appends to file)",
+    help="output file (appends to file)",
+)
+parser.add_argument(
+    "--sheet", type=int, default=0, help="sheet index of the requirements"
+)
+parser.add_argument(
+    "--prefix",
+    type=str,
+    default="REQ",
+    help="prefix for the requirement ID",
 )
 
 
+# LaTeX templates
+
 # requires LaTeX packages `calc`, `booktabs`, and `placeins`
 REQUIREMENT_MACRO = r"""
+% \requirement{<id>}{<description>}{<quality>}
 \newcommand{\requirement}[3]{%
 \begin{table}[htbp]
   \centering
@@ -56,12 +70,21 @@ REQUIREMENT_MACRO = r"""
 """
 
 
+FIX_TEMPLATE = Template(r"""
+% enable obscene amount of tables without breaks
+\maxdeadcycles=$cycles
+\extrafloats{$floats}
+
+
+""")
+
+
 TABLE_TEMPLATE = Template(r"""
 \requirement{$id}
   {
     $description
   }
-  {$level}
+  {$quality}
 """)
 
 
@@ -72,9 +95,8 @@ def escape_latex_sequences(text: str) -> str:
     return text.replace("%", "\\%").replace("$", "\\$").replace("_", "\\_")
 
 
-def generate_type_requirements(
+def generate_requirements(
     sheet_index: int,
-    type: str,
     prefix: str,
     fin: str,
     fout: argparse.FileType,
@@ -89,14 +111,25 @@ def generate_type_requirements(
     :param fout: Output file
     """
 
-    fout.write(f"\n\n\\subsection{{{type} requirements}}\n\n")
+    requirements = pd.read_excel(fin, sheet_name=sheet_index)
 
-    for _, req in pd.read_excel(fin, sheet_name=sheet_index).iterrows():
+    if len(requirements) > 50:
+        # too many floating elements (tables) for LaTeX
+        # see https://tex.stackexchange.com/questions/409796/todonotes-output-loop-100-consecutive-dead-cycles-after-50-todo-on-a-page
+        # and https://tex.stackexchange.com/questions/46512/too-many-unprocessed-floats
+        fout.write(
+            FIX_TEMPLATE.substitute(
+                cycles=200 * floor(len(requirements) / 50),
+                floats=len(requirements),
+            )
+        )
+
+    for _, req in requirements.iterrows():
         fout.write(
             TABLE_TEMPLATE.substitute(
-                id=f"{prefix}-{req.Code:02}",
+                id=f"{prefix}-{req.Code:02}" if prefix else f"{req.Code:02}",
                 description=escape_latex_sequences(req.Description),
-                level=req.QualityLevel,
+                quality=req.QualityLevel,
             )
         )
 
@@ -108,24 +141,10 @@ if __name__ == "__main__":
     # add macro
     args.output.write(REQUIREMENT_MACRO)
 
-    # generate stakeholder reqs
-    generate_type_requirements(
-        sheet_index=0,
-        type="Stakeholder",
-        prefix="STR",
-        fin=args.input,
-        fout=args.output,
-    )
-
-    args.output.write(
-        "\n\n\\FloatBarrier  % prevents previous tables from being placed below this point\n\n"
-    )
-
-    # generate system reqs
-    generate_type_requirements(
-        sheet_index=0,
-        type="System",
-        prefix="SYS",
+    # generate reqs
+    generate_requirements(
+        sheet_index=args.sheet,
+        prefix=args.prefix,
         fin=args.input,
         fout=args.output,
     )
