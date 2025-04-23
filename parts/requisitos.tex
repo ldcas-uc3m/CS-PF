@@ -2,3 +2,323 @@
 
 A continuación, se describen los requisitos del sistema a desarrollar, incluyendo la calidad del mismo.
 
+
+% \requirement{<id>}{<description>}{<quality>}
+\newcommand{\requirement}[3]{%
+\begin{table}[htbp]
+  \centering
+  \noindent
+  \begin{tabular}{@{}p{83pt}@{}p{.85\columnwidth-83pt}@{}}
+    \toprule
+    \multicolumn{2}{@{}l}{\bfseries{#1}} \\
+    \hline
+    \textbf{Description}   & {#2} \\
+    \textbf{Quality Level} & {#3} \\
+    \bottomrule
+  \end{tabular}
+  \caption{Requirement #1}
+  \label{req:#1}
+\end{table}
+}
+
+
+
+\requirement{REQ-01}
+  {
+    The system shall allow users to complete the purchase providing visual guidance.
+  }
+  {High}
+
+\requirement{REQ-02}
+  {
+    The system shall include the filter of products.
+  }
+  {Medium}
+
+\requirement{REQ-03}
+  {
+    The system shall display the guided process for configuring the products.
+  }
+  {Medium}
+
+\requirement{REQ-04}
+  {
+    The system shall validate user-provided data accuracy, using predefined rules before allowing the confirmation of the transaction.
+  }
+  {Medium}
+
+\requirement{REQ-05}
+  {
+    The system shall allow users to upload PDF files up to 5MB in size.
+  }
+  {Medium}
+
+\requirement{REQ-06}
+  {
+    The system shall generate the digital receipt confirming the selected configuration.
+  }
+  {Medium}
+
+\requirement{REQ-07}
+  {
+    The system shall display the status of the order in real time, with updates upon user refresh.
+  }
+  {Medium}
+
+\requirement{REQ-08}
+  {
+    The system shall provide the activity log.
+  }
+  {High}
+
+\requirement{REQ-09}
+  {
+    The system shall allow users to cancel the configuration before final confirmation.
+  }
+  {High}
+
+\requirement{REQ-10}
+  {
+    The system shall notify users of progress via the status bar.
+  }
+  {Medium}
+
+\requirement{REQ-11}
+  {
+    The system shall provide users with messages when errors occur.
+  }
+  {High}
+
+\requirement{REQ-12}
+  {
+    The system shall save partially completed configuration automatically.
+  }
+  {Medium}
+
+\requirement{REQ-13}
+  {
+    The system shall allow users to load the previously saved configuration.
+  }
+  {High}
+
+\requirement{REQ-14}
+  {
+    The system shall restrict access to configuration data.
+  }
+  {Medium}
+
+\requirement{REQ-15}
+  {
+    The system shall be accessible via web.
+  }
+  {High}
+
+\requirement{REQ-16}
+  {
+    The system shall support responsive layout.
+  }
+  {High}
+
+\requirement{REQ-17}
+  {
+    The system shall log configuration sessions.
+  }
+  {Medium}
+
+\requirement{REQ-18}
+  {
+    The system shall export the final configuration to the PDF file.
+  }
+  {Medium}
+
+\requirement{REQ-19}
+  {
+    The system shall support multilingual interface.
+  }
+  {High}
+
+\requirement{REQ-20}
+  {
+    The system shall deny submission of incomplete configurations.
+  }
+  {High}
+
+\requirement{REQ-21}
+  {
+    The system shall notify the user when selecting incompatible components.
+  }
+  {High}
+
+\requirement{REQ-22}
+  {
+    The system shall calculate the total cost of the configuration.
+  }
+  {Medium}
+
+\requirement{REQ-23}
+  {
+    The system shall integrate with the payment gateway.
+  }
+  {High}
+
+\requirement{REQ-24}
+  {
+    The system shall store the completed configuration in the secure database.
+  }
+  {Medium}
+
+\requirement{REQ-25}
+  {
+    The system shall allow administrators to modify component prices.
+  }
+  {Medium}
+
+\requirement{REQ-26}
+  {
+    The system shall support uploading of component images.
+  }
+  {Medium}
+
+\requirement{REQ-27}
+  {
+    The system shall provide tool tips for the configuration options.
+  }
+  {High}
+
+\requirement{REQ-28}
+  {
+    The system shall allow components to be grouped into predefined templates.
+  }
+  {High}
+
+\requirement{REQ-29}
+  {
+    The system shall display the visual representation of the current configuration.
+  }
+  {Medium}
+
+\requirement{REQ-30}
+  {
+    The system shall track the environmental impact of each configuration.
+  }
+  {Medium}
+
+\requirement{REQ-31}
+  {
+    The system shall allow users to compare up to 3 configurations.
+  }
+  {High}
+
+\requirement{REQ-32}
+  {
+    The system shall offer assistance through the chatbot.
+  }
+  {Medium}
+
+\requirement{REQ-33}
+  {
+    The system shall detect deprecated components.
+  }
+  {Medium}
+
+\requirement{REQ-34}
+  {
+    The system shall require users to confirm legal terms.
+  }
+  {High}
+
+\requirement{REQ-35}
+  {
+    The system shall allow users to submit feedback on the configuration.
+  }
+  {High}
+
+\requirement{REQ-36}
+  {
+    The system shall automatically send the confirmation email with the configuration summary.
+  }
+  {Medium}
+
+\requirement{REQ-37}
+  {
+    The system shall allow users to duplicate the existing configuration.
+  }
+  {High}
+
+\requirement{REQ-38}
+  {
+    The system shall be operational 99\% of the time.
+  }
+  {Medium}
+
+\requirement{REQ-39}
+  {
+    The system shall apply discounts dynamically.
+  }
+  {High}
+
+\requirement{REQ-40}
+  {
+    The system shall comply with the general data protection regulation.
+  }
+  {Medium}
+
+\requirement{REQ-41}
+  {
+    The system shall support custom themes.
+  }
+  {High}
+
+\requirement{REQ-42}
+  {
+    The system shall support browser navigation without losing selected configuration data.
+  }
+  {Medium}
+
+\requirement{REQ-43}
+  {
+    The system shall log out users automatically after 15 minutes of inactivity.
+  }
+  {Medium}
+
+\requirement{REQ-44}
+  {
+    The system shall store configuration changes in version history.
+  }
+  {Medium}
+
+\requirement{REQ-45}
+  {
+    The system shall integrate with external software by exporting configuration data.
+  }
+  {High}
+
+\requirement{REQ-46}
+  {
+    The system shall allow authorized users to mark configurations as 'pending approval'.
+  }
+  {Medium}
+
+\requirement{REQ-47}
+  {
+    The system shall prevent simultaneous editing of the same configuration.
+  }
+  {High}
+
+\requirement{REQ-48}
+  {
+    The system shall validate numeric input fields to allow only valid values within defined ranges.
+  }
+  {Medium}
+
+\requirement{REQ-49}
+  {
+    The system shall allow saving notes.
+  }
+  {High}
+
+\requirement{REQ-50}
+  {
+    The system shall allow exporting configuration data.
+  }
+  {High}

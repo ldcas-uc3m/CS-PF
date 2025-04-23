@@ -42,6 +42,16 @@ parser.add_argument(
     default="REQ",
     help="prefix for the requirement ID",
 )
+parser.add_argument(
+    "--skip",
+    type=int,
+    help="number of requirements to skip",
+)
+parser.add_argument(
+    "--trim",
+    type=int,
+    help="number of requirements to cut from the end",
+)
 
 
 # LaTeX templates
@@ -88,6 +98,9 @@ TABLE_TEMPLATE = Template(r"""
 """)
 
 
+QUALITY_LEVEL_MAP = {3: "High", 2: "Medium", 1: "Low"}
+
+
 def escape_latex_sequences(text: str) -> str:
     """
     Escapes the LaTeX special sequences
@@ -100,6 +113,8 @@ def generate_requirements(
     prefix: str,
     fin: str,
     fout: argparse.FileType,
+    skip: int | None,
+    trim: int | None
 ):
     """
     Writes the requirements from the specified type to the output file
@@ -109,9 +124,17 @@ def generate_requirements(
     :param prefix: Requirement ID prefix
     :param fin: Input file
     :param fout: Output file
+    :param skip: Requirements to skip
+    :param skip: Requirements to cut from the end
     """
 
     requirements = pd.read_excel(fin, sheet_name=sheet_index)
+
+    if skip:
+        requirements = requirements.iloc[skip:].reset_index()
+
+    if trim:
+        requirements = requirements.iloc[:-trim]
 
     if len(requirements) > 50:
         # too many floating elements (tables) for LaTeX
@@ -124,12 +147,13 @@ def generate_requirements(
             )
         )
 
-    for _, req in requirements.iterrows():
+    for i, req in requirements.iterrows():
         fout.write(
             TABLE_TEMPLATE.substitute(
-                id=f"{prefix}-{req.Code:02}" if prefix else f"{req.Code:02}",
+                id=f"{prefix}-{i + 1:02}" if prefix else f"{req.Code:02}",
                 description=escape_latex_sequences(req.Description),
-                quality=req.QualityLevel,
+                # quality=req.QualityLevel,
+                quality=QUALITY_LEVEL_MAP.get(req.NumericQuality, "N/A"),  # our excel got fucked up and we had to manually add the number of stars
             )
         )
 
@@ -147,4 +171,6 @@ if __name__ == "__main__":
         prefix=args.prefix,
         fin=args.input,
         fout=args.output,
+        skip=args.skip,
+        trim=args.trim
     )
