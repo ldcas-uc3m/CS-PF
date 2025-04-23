@@ -1,4 +1,7 @@
 \section{Plan de negocio}
+En esta sección se presenta el análisis detallado que sustenta la viabilidad y el desarrollo operativo y financiero de BuroSmart. Incluye la organización interna de la empresa, la estructura de costes, las fuentes de financiación, la segmentación de clientes y la política de precios, así como una proyección financiera a medio plazo.
+
+El objetivo es proporcionar un marco claro y fundamentado que permita entender cómo BuroSmart alcanzará sus metas comerciales, garantizará su sostenibilidad y aprovechará las oportunidades de mercado identificadas, respaldando la toma de decisiones estratégicas y facilitando la comunicación con inversores y socios potenciales.
 
 \subsection{Organización de la empresa}
 La empresa cuenta con una estructura matricial, la cual ofrece una gran flexibilidad y colaboración entre los distintos departamentos, y permite enfocarse en varias funciones a la vez. Es cierto que este tipo de estructura genera un doble reporte en ciertas situaciones, y puede generar conflictos entre gerentes, pero también permite a cada equipo centrarse en su función sin perder su especialización.
@@ -20,3 +23,180 @@ legales.
 \end{itemize}
 
 
+\subsection{Estructura de costes}
+
+Para elaborar una estructura de costes realista y adaptada a la región de Madrid (España), se han analizado fuentes de ofertas de proveedores tecnológicos relevantes como Glassdoor, Indeed e InfoJobs.
+
+\subsubsection{Costes de Personal}
+
+El equipo inicial de BuroSmart estará compuesto por:
+
+\begin{itemize}
+  \item \textbf{Desarrollador de IA y Backend (2 personas):} Salario medio bruto anual en Madrid: 40.000€ por persona. Basado en ofertas de empleo IT en portales como InfoJobs y Glassdoor, además de informes especializados en salarios de perfiles de IA.
+  \item \textbf{Desarrollador Frontend (1 persona):} Salario medio bruto anual: 35.000€.
+  \item \textbf{Responsable de Calidad y Cumplimiento (1 persona):} Salario medio anual: 38.000€. Este perfil es clave para gestionar la IGPD y compliance legal.
+  \item \textbf{Marketing y Ventas (1 persona):} Salario medio anual: 30.000€. Incluye tareas de captación, SEO, SEM basado en estudios de la Asociación Española de Marketing Digital.
+  \item \textbf{Soporte y Atención al Cliente (1 persona):} Salario medio anual: 24.000€.
+\end{itemize}
+
+\textbf{Total coste anual de personal (6 personas):}  
+\[
+(2 \times 40.000) + 35.000 + 38.000 + 30.000 + 24.000 = 207.000\,€
+\]
+
+Se ha aplicado un 30\% adicional para cargas sociales y beneficios sociales (seguridad social, vacaciones, etc.), lo que equivale a:  
+\[
+207.000\,€ \times 1.3 = \mathbf{269.100\,€ \text{ anuales}}
+\]
+
+\subsubsection{Costes de Hardware e Infraestructura}
+
+BuroSmart se basará en una infraestructura escalable en la nube, fundamental para alojar la plataforma SaaS y ejecutar modelos de lenguaje:
+
+\begin{itemize}
+  \item \textbf{Servidores en la nube (Azure/Microsoft):}  
+  El coste estimado para un entorno de producción con balanceo de carga y alta disponibilidad es de aproximadamente 1.200€ al mes, que incluye escalado automático, bases de datos gestionadas y seguridad.  
+  \textbf{Total anual estimado:} 14.400€
+  
+  \item \textbf{Licencias y APIs de IA (OpenAI, etc.):}  
+  Actualmente OpenAI ofrece servicios de pago según uso, con un coste medio estimado en 2.000€ mensuales para esta escala de proyecto al inicio (asumiendo una carga media mensual).  
+  \textbf{Total anual estimado:} 24.000€
+  
+  \item \textbf{Herramientas y software de desarrollo:}  
+  Incluye licencias de software, plataformas de gestión y testing: alrededor de 5.000€ al año.
+\end{itemize}
+
+\subsubsection{Costes de Servicios}
+
+\begin{itemize}
+  \item \textbf{Marketing digital y eventos:}  
+  Campañas mensuales en redes y Google Ads, eventos tecnológicos y colaboraciones con instituciones: 1.000€ al mes (12.000€/año).
+  
+  \item \textbf{Asesoría legal y cumplimiento:}  
+  Servicio especializado para IGPD y elaboración de políticas: unos 10.000€ anuales.
+  
+  \item \textbf{Costes administrativos y otros:}  
+  Servicios de contabilidad, seguros, alquiler de oficina (si se aplica) y gastos generales: 18.000€ anuales.
+\end{itemize}
+
+\subsubsection{Resumen de Costes Anuales}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Concepto} & \textbf{Coste Anual (€)} \\
+\hline
+Personal (6 empleados + cargas) & 269.100 \\
+Infraestructura IA y servidores & 14.400 \\
+Licencias y APIs IA & 24.000 \\
+Herramientas de desarrollo & 5.000 \\
+Marketing y eventos & 12.000 \\
+Asesoría legal \& compliance & 10.000 \\
+Costes administrativos & 18.000 \\
+\hline
+\textbf{Total Anual de Costes} & \textbf{352.500} \\
+\hline
+\end{tabular}
+\caption{Resumen de costes anuales}
+\end{table}
+
+\subsection{Fuentes y Estrategia de Financiamiento Inicial (Funding)}
+
+Para asegurar la viabilidad y expansión los primeros 1-2 años, se prevé obtener financiación que cubra aproximadamente 1,2 millones de euros con el siguiente enfoque:
+
+\subsubsection{Subvenciones y Ayudas Públicas}
+
+\begin{itemize}
+  \item \textbf{Plan de Recuperación, Transformación y Resiliencia de la UE – Fondo Next Generation:}  
+  España dispone de fondos específicos para transformación digital y desarrollo de IA en el sector público y privado, gestionados por el Ministerio de Asuntos Económicos y Transformación Digital.  
+  Se espera obtener al menos \textbf{300.000€ en ayudas y subvenciones públicas} para proyectos de digitalización e innovación tecnológica.
+  
+  \item \textbf{Ayudas de la Comunidad de Madrid:}  
+  La Comunidad dispone de convocatorias locales para startups tecnológicas con ayudas aproximadas de 50.000€ a 100.000€ para proyectos innovadores y de I+D.
+\end{itemize}
+
+\subsubsection{Inversores Privados y Venture Capital}
+
+\begin{itemize}
+  \item \textbf{Business Angels e Inversores especializados en SaaS/IA:}  
+  Firmas y grupos de inversores como \textit{Kibo Ventures, Samaipata Ventures} o \textit{Nauta Capital} interesados en soluciones SaaS para administraciones públicas.  
+  La inversión privada estimada en la primera ronda seed es de \textbf{500.000€} a cambio de un 15-20\% de equity.
+  
+  \item \textbf{Motivación para invertir:}  
+  \begin{itemize}
+    \item Acceso a un mercado institucional con alto gasto y poca tecnología accesible.  
+    \item Potencial escalabilidad regional e internacional.  
+    \item Equipo con experiencia y producto diferencial por IA avanzada y cumplimiento normativo.  
+    \item Contribución a ODS, atractivo para fondos ESG.
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Préstamo Bancario}
+
+Se busca un préstamo bancario de \textbf{100.000€} con interés competitivo (estimado del 5\% anual) para mejorar el cashflow en los primeros meses.  
+Requisitos usuales: garantías personales, plan de negocio sólido y plan de devolución mediante ingresos recurrentes.
+
+\subsection{Clientes y Política de Precios}
+
+\subsubsection{Segmento de Clientes}
+
+\begin{itemize}
+  \item \textbf{Administración Pública Autónoma y Local:} Enfocado en Comunidad de Madrid y municipios con >50.000 habitantes, usando proyectos piloto y contratos menores.
+  \item \textbf{Empresas Privadas Grandes:} Bancos, energéticas, aseguradoras que requieren digitalización y cumplimiento normativo.
+\end{itemize}
+
+\subsubsection{Modelo de Ingresos y Tarifas}
+
+Modelo basado en suscripción SaaS y servicios profesionales:
+
+\begin{itemize}
+  \item \textbf{Suscripción SaaS (plataforma + IA):}  
+  Tarifas mensuales según usuarios y volumen de trámites:  
+  - Gobiernos regionales/locales: 3.000€ a 10.000€/mes.  
+  - Empresas grandes: 5.000€ a 20.000€/mes.  
+  Incluye mantenimiento, actualizaciones y soporte.
+  
+  \item \textbf{Servicios de consultoría y personalización:}  
+  Desde 15.000€ por proyecto o retención anual.
+\end{itemize}
+
+\paragraph{Ejemplo de ingresos simulados:}
+\begin{itemize}
+  \item Comunidad Madrid: 8.000€/mes
+  \item Ayuntamiento Madrid: 5.000€/mes
+  \item 2 empresas privadas grandes: 12.000€/mes cada una (total 24.000€/mes)
+\end{itemize}
+
+\textbf{Ingresos mensuales estimados (año 1):} 37.000€  
+\textbf{Ingresos anuales (año 1):} 444.000€
+
+Anticipando crecimiento de cartera del 30\% anual.
+
+\subsection{Proyección Financiera a 5 años}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|r|r|r|}
+\hline
+\textbf{Año} & \textbf{Ingresos (€)} & \textbf{Costes (€)} & \textbf{Beneficio Neto (€)} \\
+\hline
+1 & 444.000 & 352.500 & 91.500 \\
+2 & 577.200 & 410.000* & 167.200 \\
+3 & 750.360 & 455.000* & 295.360 \\
+4 & 975.468 & 505.000* & 470.468 \\
+5 & 1.268.108 & 555.000* & 713.108 \\
+\hline
+\multicolumn{4}{l}{\footnotesize *Incremento estimado en costes por crecimiento de personal y servicios.}
+\end{tabular}
+\caption{Proyección financiera a 5 años}
+\end{table}
+
+El aumento progresivo de costes se debe a:
+
+\begin{itemize}
+  \item \textbf{Crecimiento del equipo:} incorporación gradual de personal técnico, comercial y soporte para sostener la expansión.
+  \item \textbf{Mayor inversión tecnológica:} escalado en infraestructura cloud, uso creciente de APIs de IA y licencias.
+  \item \textbf{Incremento en marketing y ventas:} campañas y presencia en eventos para captar más clientes.
+  \item \textbf{Gastos administrativos y legales:} aumento en cumplimiento normativo, asesoría y gestión con el crecimiento.
+\end{itemize}
