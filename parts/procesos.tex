@@ -28,26 +28,6 @@ El diagrama de actividad del proceso queda reflejado en la \figref{uml-diagrams/
   \item \textbf{\textit{Manage results of implementation:}} Se identifican los elementos del sistema (\textit{system elements}) y se documentan los resultados del proceso (\textit{implementation report}). Por último, se elabora el \textit{implementation enabling system requirements}.
 \end{itemize}
 
-La matriz RACI del proceso queda reflejada en la \tabref{raci-implementation}.
-
-% Responsable: realiza la tarea, pueden ser varios
-% Accountable: al que despiden si sale mal, tiene que haber exactamente uno por actividad
-% Consulted: asesoran
-% Informed: necesitan recibir información sobre el progreso del projecto
-\begin{table}[htbp]
-  \centering
-  \begin{tabular}{l|c|c|c|c}
-    \textbf{Actividades}                      & \rotatebox{90}{Rol I} & \rotatebox{90}{Rol II} & \rotatebox{90}{Rol III} & \rotatebox{90}{Rol IV} \\
-    \midrule
-    \textit{Prepare for implementation}       &       &        &         &        \\ \hline
-    \textit{Perform implementation}           &       &        &         &        \\ \hline
-    \textit{Manage results of implementation} &       &        &         &        \\
-  \end{tabular}
-  \caption{Matriz RACI del Proceso de Implementación}
-  \label{tab:raci-implementation}
-\end{table}
-
-
 \subsubsection{Salidas}
 \begin{itemize}
   \item \textbf{\textit{Implementation strategy:}} El enfoque, recursos, y planificación seguida en la implementación.
@@ -58,6 +38,38 @@ La matriz RACI del proceso queda reflejada en la \tabref{raci-implementation}.
   \item \textbf{\textit{Implementation report:}} Informe del proceso de implementación, incluyendo los resultados de cada una de las actividades.
   \item \textbf{\textit{Implementation record:}} Registro del proceso de implementación, el cual incluye las decisiones tomadas durante la implementación y los problemas y soluciones implementadas.
 \end{itemize}
+
+
+\subsection{Roles} \label{sec:roles}
+Para este proceso, se generan los siguientes roles, cada uno procedente de uno de los centros de responsabilidad:
+\begin{enumerate}
+  \item \textbf{Equipo de desarrollo (I+D):} El equipo técnico
+  \item \textbf{Project manager (I+D):} Responsable del equipo técnico
+  \item \textbf{Quality Assurance (Calidad):} Responsable de la calidad
+  \item \textbf{Control de riesgos (Riesgos):} Responsable legal
+  \item \textbf{Product manager (I+D):} Encargado de mantener la visión del producto
+  \item \textbf{Control financiero (Financiero):} Responsable de los recursos de la empresa
+\end{enumerate}
+
+\noindent
+La matriz RACI del proceso queda reflejada en la \tabref{raci-implementation}.
+
+% Responsable: realiza la tarea, pueden ser varios
+% Accountable: al que despiden si sale mal, tiene que haber exactamente uno por actividad
+% Consulted: asesoran
+% Informed: necesitan recibir información sobre el progreso del projecto
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{l|c|c|c|c|c|c}
+    \textbf{Actividades} & \rotatebox{90}{E. desarrollo} & \rotatebox{90}{PM} & \rotatebox{90}{QA} & \rotatebox{90}{Control de riesgos} & \rotatebox{90}{Product manager} & \rotatebox{90}{Control financiero} \\
+    \midrule
+    \textit{Prepare for implementation}       & C & R  & I & I & A & C \\ \hline
+    \textit{Perform implementation}           & R & A  &   &   & C &   \\ \hline
+    \textit{Manage results of implementation} & C & RA & I &   & R & I \\
+  \end{tabular}
+  \caption{Matriz RACI del Proceso de Implementación}
+  \label{tab:raci-implementation}
+\end{table}
 
 
 
@@ -86,29 +98,6 @@ El diagrama de actividad del proceso queda reflejado en la \figref{uml-diagrams/
 \end{itemize}
 
 
-La matriz RACI del proceso queda reflejada en la \tabref{raci-implementation}.
-
-% Responsable: realiza la tarea, pueden ser varios
-% Accountable: al que despiden si sale mal, tiene que haber exactamente uno por actividad
-% Consulted: asesoran
-% Informed: necesitan recibir información sobre el progreso del projecto
-\begin{table}[htbp]
-  \centering
-  \begin{tabular}{l|c|c|c|c}
-    \textbf{Actividades}                      & \rotatebox{90}{Rol I} & \rotatebox{90}{Rol II} & \rotatebox{90}{Rol III} & \rotatebox{90}{Rol IV} \\
-    \midrule
-    \textit{Plan configuration management}       &       &        &         &        \\ \hline
-    \textit{Plan configuration identification}           &       &        &         &        \\ \hline
-    \textit{Plan configuration change management} &       &        &         &        \\ \hline
-    \textit{Plan configuration status accounting} &       &        &         &        \\ \hline
-    \textit{Plan configuration evaluation} &       &        &         &        \\ \hline
-    \textit{Perform release control} &       &        &         &        \\
-  \end{tabular}
-  \caption{Matriz RACI del Proceso de Configuracion}
-  \label{tab:raci-configuracion}
-\end{table}
-
-
 \subsubsection{Salidas}
 \begin{itemize}
   \item \textbf{\textit{Configuration management strategy:}} La estrategia a seguir para realizar la gestión de la configuración del proyecto. Describe cómo pedir, realizar, autorizar, y documentar los cambios y establece las \textit{baselines}.
@@ -117,3 +106,29 @@ La matriz RACI del proceso queda reflejada en la \tabref{raci-implementation}.
   \item \textbf{\textit{Configuration management record:}} Registro de todas las acciones realizadas en las actividades de gestión de la configuración. Incluye fechas, responsables, y descripciones detalladas de las decisiones y cambios tomados.
 \end{itemize}
 
+
+\subsubsection{Roles}
+Para este proceso, se usarán los roles mencionados en la Sección \ref{sec:roles}.
+
+\noindent
+La matriz RACI del proceso queda reflejada en la \tabref{raci-implementation}.
+
+% Responsable: realiza la tarea, pueden ser varios
+% Accountable: al que despiden si sale mal, tiene que haber exactamente uno por actividad
+% Consulted: asesoran
+% Informed: necesitan recibir información sobre el progreso del projecto
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{l|c|c|c|c|c|c}
+    \textbf{Actividades} & \rotatebox{90}{E. desarrollo} & \rotatebox{90}{PM} & \rotatebox{90}{QA} & \rotatebox{90}{Control de riesgos} & \rotatebox{90}{Product manager} & \rotatebox{90}{Control financiero} \\
+    \midrule
+    \textit{Plan configuration management}        &    &    & RA & C  & C  &    \\ \hline
+    \textit{Plan configuration identification}    &    &    & RA &    & C  &    \\ \hline
+    \textit{Plan configuration change management} &    & C  & RA &    & C  & C  \\ \hline
+    \textit{Plan configuration status accounting} &    &    & RA &    & C  &    \\ \hline
+    \textit{Plan configuration evaluation}        &    &    & RA & I  & C  &    \\ \hline
+    \textit{Perform release control}              &    &    & RA &    & C  &    \\
+  \end{tabular}
+  \caption{Matriz RACI del Proceso de Configuracion}
+  \label{tab:raci-configuracion}
+\end{table}
