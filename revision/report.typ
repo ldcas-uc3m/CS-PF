@@ -21,11 +21,12 @@
     (
       name: "Pablo",
       surname: "Fernández de la Puente Jaureguízar",
+      surname_length: 4,
       nia: 100409646
     ),
   ),
   logo: "old",
-  toc: false,
+  toc: true,
   language: "es",
 )
 
