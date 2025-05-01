@@ -33,4 +33,4 @@
 
 #include "positivos.typ"
 #include "formato.typ"
-#include "review.typ"
+#include "content.typ"

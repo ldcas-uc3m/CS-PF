@@ -13,21 +13,27 @@ de la empresa, y mencionar la universidad en la portada, y quizás hubiera sido
 una mejor idea prescindir en la tabla de contenidos del encabezado.
 
 // the ugly
-Sin embargo, hay aspectos que nos gustaría que se mejorasen, especialmente en las figuras. Ninguna de las figuras o tablas están numeradas, ni cuentan con leyendas, lo cual ayudaría en la comprensión del documento. Las imágenes también aparecen en formato rasterizado en lugar de vectorial, aun tratándose de diagramas, lo cual dificulta en ocasiones la lectura del texto dentro de las mismas. Las figuras de las páginas 9, 15 y 22 exceden el ancho de la página, y las figuras de las páginas 14 y 23 no se encuentran centradas. En especial, la figura de la página 9 cuenta con un fondo de un color distinto en tres de sus laterales, lo cual es una pequeña distracción para el lector.
+Sin embargo, hay aspectos que nos gustaría que se mejorasen, especialmente en las figuras. Ninguna de las figuras o tablas están numeradas, ni cuentan con leyendas, lo cual ayudaría en la comprensión del documento. Las imágenes también aparecen en formato rasterizado en lugar de vectorial, aun tratándose de diagramas, lo cual dificulta en ocasiones la lectura del texto dentro de las mismas. Las figuras de las páginas 9, 15 y 22 exceden el ancho del texto, entrando en los márgenes de la página, y las figuras de las páginas 14 y 23 no se encuentran centradas. En especial, la figura de la página 9 cuenta con un fondo de un color distinto en tres de sus laterales, lo cual es una pequeña distracción para el lector.
 
 Un listado de tablas y/o figuras también sería un buen
 detalle.
 
 Por otro lado, también hubiéramos apreciado que se usaran números en los títulos
 de las subsecciones, ya que facilitaría la comunicación a la hora de comentar
-detalles del documento. Los títulos de "Entradas, Actividades y Salidas" dentro de la Sección 3 nos parecen redundantes, ya que sus subsecciones son "Entradas", "Actividades" y "Salidas".
+detalles del documento. Los títulos de "Entradas, Actividades y Salidas"
+dentro de la Sección 3 nos parecen redundantes, ya que sus subsecciones son
+"Entradas", "Actividades" y "Salidas".
 
 
 // the bad
 Por último, mencionar que la ortografía y puntuación son, en general, correctas, quitando algunas excepciones.
 
-En la sección de "Innovación" de la página 3, aparece "[...] en realizar limpieza en el fondo marino utilizando drones acuáticos en detección de desechos con R.O.U.V. (Remotely operated underwater vehicle)", lo cual asumimos que se quiere referir a "[...] en realizar limpieza en el fondo marino
-utilizando drones acuáticos en detección de desechos*, o* *ROUV* (Remotely #strong("O")perated #strong("U")nderwater #strong("V")ehicle)".
+En la sección de "Innovación" de la página 3, aparece #quote([[...] en realizar
+limpieza en el fondo marino utilizando drones acuáticos en detección de desechos
+con R.O.U.V. (Remotely operated underwater vehicle)]), lo cual asumimos que se
+quiere referir a "[...] en realizar limpieza en el fondo marino utilizando
+drones acuáticos en detección de desechos*, o* *ROUV* (Remotely
+#strong("O")perated #strong("U")nderwater #strong("V")ehicle)".
 
 En la página 12, se usa la combinación de caracteres "->", lo cual debería ser reemplazada por el carácter "→", o suprimido completamente en pos de usar otro tipo de conectores gramaticales, como comentaremos en más detalle en la @sec:estandares.
 

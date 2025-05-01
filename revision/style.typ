@@ -263,8 +263,12 @@ https://github.com/guluc3m/report-template-typst
     if language == "es"{
       outline_title = "Tabla de Contenidos"
     }
+
+    set page(header: [], footer: [])
+
     outline(title: outline_title)
     pagebreak()
+    counter(page).update(1)
   }
 
   doc
