@@ -9,5 +9,5 @@ uv sync
 
 Then execute with:
 ```
-python3 requirements.py requirements.xls -o ../parts/requisitos.tex
+uv run requirements.py requirements.xls -o ../parts/requisitos.tex
 ```
