@@ -82,7 +82,7 @@ https://github.com/guluc3m/report-template-typst
 
     // surname
     if "surname_length" in author{
-      author.surname.split(" ").slice(1, count: author.surname_length).join(" ")
+      author.surname.split(" ").slice(0, count: author.surname_length).join(" ")
     } else {
       author.surname.split(" ").at(0)
     }
