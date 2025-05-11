@@ -62,15 +62,16 @@ introducción a la matriz RACI del segundo proceso.
 
 
 == Organigrama
-// TODO
+La estructura organizativa está bien definida y jerarquizada. Se entiende claramente la función de cada equipo, las relaciones de dependencia y la coordinación entre ellos. Es un acierto haber incluido equipos específicos como el de Desarrollo de IA, el de Configuración y el Comité de Cambios, ya que estos reflejan un enfoque profesional y técnico en la gestión de un sistema complejo como el de los ROVs.
 
-
+Sin embargo, se echa en falta una indicación explícita del tamaño aproximado de cada equipo, lo cual ayudaría a entender mejor la carga de trabajo y la distribución de responsabilidades. 
 
 == Plan económico
-// TODO
+El análisis económico es bastante detallado, con desglose claro de inversión inicial, costes operativos y fuentes de ingresos. La presentación de rangos para los valores económicos aporta flexibilidad y demuestra que se han considerado distintas escalas de operación. También se valora positivamente la inclusión de flujos de caja y la cuenta de resultados simplificada.
 
+No obstante, algunos supuestos podrían explicarse mejor, como por ejemplo la procedencia exacta de las subvenciones esperadas o el grado de certeza sobre los contratos de servicio. También sería recomendable aclarar cómo se pretende financiar la inversión inicial tan elevada (hasta 23.1M €).
 
-
+Además, dado que se prevé que la rentabilidad neta llegue a muy largo plazo (más de 7 años), podría ser útil incluir estrategias de mitigación de riesgo financiero o posibles planes de escalado progresivo.
 
 == Presentación
 La presentación realizada por el equipo nos pareció de una muy alta calidad,
