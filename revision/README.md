@@ -1,12 +1,11 @@
-# Plantilla de Typst para memorias de la UC3M
+# Revisión cruzada
 
-## Uso
-La memoria consiste de un archivo principal [`report.typ`](report.typ), y un archivo de plantilla [`uc3mreport.typ`](uc3mreport.typ), el cual contiene toda la configuración.
-
+## Compilación
 Para compilar, instala [Typst](https://github.com/typst/typst?tab=readme-ov-file#installation) y corre:
 ```
-typst compile report.typ --root ..
+typst compile revision.typ
 ```
+
 > [!TIP]
 > Para usuarios de VS Code, se recomienda usar la extensión [Tinymist Typst](https://marketplace.visualstudio.com/items/?itemName=myriad-dreamin.tinymist), la cual no requiere instalar el compilador.
 
