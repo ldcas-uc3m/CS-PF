@@ -136,7 +136,7 @@ def generate_requirements(
     if trim:
         requirements = requirements.iloc[:-trim]
 
-    if len(requirements) > 50:
+    if len(requirements) >= 50:
         # too many floating elements (tables) for LaTeX
         # see https://tex.stackexchange.com/questions/409796/todonotes-output-loop-100-consecutive-dead-cycles-after-50-todo-on-a-page
         # and https://tex.stackexchange.com/questions/46512/too-many-unprocessed-floats
